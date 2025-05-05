@@ -24,6 +24,8 @@ $pic-width: 600px;
     display: flex;
     justify-content: space-between;
     background-color: #dddddd;
+    overflow: hidden;
+
 
     .txt {
         width: $txt-width;
@@ -41,9 +43,17 @@ $pic-width: 600px;
         height: $box-height;
 
         img {
+            transition: scale .5s;
             width: 100%;
             height: 100%;
+
+            &:hover {
+                scale: 1.05;
+            }
         }
+
     }
+
+
 }
 </style>

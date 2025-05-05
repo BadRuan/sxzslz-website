@@ -42,7 +42,7 @@ const NewsList: NewsInter[] = [
             <div class="pic"><img src="@/assets/pic/news.jpg" alt="封面图片"></div>
             <div class="txt">
                 <p>{{ news.title }}</p>
-                <time>{{ news.date }}</time>
+                <span>{{ news.date }}</span>
             </div>
         </div>
     </div>
@@ -50,7 +50,7 @@ const NewsList: NewsInter[] = [
 
 <style lang="scss" scoped>
 $news-item-width: 240px;
-$news-item-pic-height: 130px;
+$news-item-pic-height: 120px;
 $news-item-txt-height: 100px;
 
 .news-list {
@@ -93,7 +93,7 @@ $news-item-txt-height: 100px;
 
             }
 
-            time {
+            span {
                 margin: 0 20px;
                 width: 240px;
                 color: #333;
@@ -112,7 +112,7 @@ $news-item-txt-height: 100px;
                 background-color: rgb(51, 52, 138);
 
                 p,
-                time {
+                span {
                     color: #fff;
                 }
 

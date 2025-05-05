@@ -1,18 +1,18 @@
 # 沈巷镇水利站网站前端
 
-## Project Setup
+## 项目安装
 
 ```sh
 pnpm i
 ```
 
-### Compile and Hot-Reload for Development
+### 项目调试
 
 ```sh
 pnpm dev
 ```
 
-### Type-Check, Compile and Minify for Production
+### 项目编译
 
 ```sh
 pnpm build
