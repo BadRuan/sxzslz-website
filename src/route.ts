@@ -6,6 +6,10 @@ const routes = [
     path: "/",
     component: Home,
   },
+  {
+    path: "/newslist",
+    component: () => import("@/page/NewsList.vue"),
+  },
 ];
 
 const router = createRouter({

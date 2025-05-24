@@ -1,4 +1,12 @@
+<script setup lang="ts">
+import Mark from '@/components/common/Mark.vue';
+</script>
+
 <template>
+    <Mark>
+        <template #first>泵站职责</template>
+        <template #second>Duty</template>
+    </Mark>
     <div class="box">
         <div class="txt">
             <p>（一）宣传、贯彻党和国家有关水利方针、政策等法律法规； </p>

@@ -13,24 +13,27 @@ const nav_list: string[] = [
     <header>
         <div class="heder-container">
             <div class="logo">
-                <img src="@/assets/icon/logo.svg" alt="LOGO" />
-                <span class="logo-text">芜湖市鸠江区沈巷镇水利站</span>
+                <img src="@/assets/icon/water-logo.svg" alt="logo" />
+                <img src="@/assets/icon/logo-text.svg" alt="logo-text" />
             </div>
             <nav>
-                <ul>
-                    <li v-for="(item, index) in nav_list" :key="index">
-                        <a href="#">{{ item }}</a>
-                    </li>
-                </ul>
+                <a href="#" v-for="(item, index) in nav_list" :key="index">
+                    <span>{{ item }}</span>
+                    <div></div>
+                </a>
             </nav>
         </div>
     </header>
+
 </template>
 
 <style lang="scss" scoped>
+$header-height: 60px;
+
 header {
-    height: 60px;
-    background-color: #E5E5E5;
+    height: $header-height;
+    background-color: #fff;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
 
     .heder-container {
         width: $box-width;
@@ -43,40 +46,41 @@ header {
         .logo {
             display: flex;
             flex-direction: row;
-            justify-items: center;
-
-            img {
-                width: 44px;
-            }
+            align-items: center;
         }
 
-        .logo-text {
-            font-size: 1.4em;
-        }
-
-        nav ul {
+        nav {
             display: flex;
             flex-direction: row;
             gap: 20px;
-            animation: move 2s;
 
-            li a {
+            a {
                 font-size: 1.2em;
                 color: #000;
 
+
+                span {
+                    display: inline-block;
+                    height: $header-height;
+
+                }
+
+                div {
+                    width: 100%;
+                    height: 2px;
+
+                }
+
+                &:hover {
+                    color: $primary-color;
+
+                    div {
+                        background-color: $primary-color;
+                    }
+                }
             }
         }
     }
 
-}
-
-@keyframes move {
-    0% {
-        line-height: 0px;
-    }
-
-    100% {
-        line-height: 60px;
-    }
 }
 </style>

@@ -6,7 +6,6 @@
         <div class="mark-first">
             <slot name="first"></slot>
         </div>
-        <div class="line"></div>
     </div>
 </template>
 
@@ -16,9 +15,9 @@ $line-width: 48px;
 .mark {
     display: block;
     width: auto;
-    margin: 16px 0;
-    margin-left: 20px;
-    animation: move 2s;
+    margin: 20px 0 10px 0;
+    border-left: 2px solid $primary-color;
+    padding-left: 20px;
 
     .mark-first {
         font-size: 1.5em;
@@ -27,7 +26,7 @@ $line-width: 48px;
 
     .mark-second {
         font-size: 1em;
-        color: #2f3182;
+        color: #808080;
     }
 
     .line {
@@ -38,20 +37,5 @@ $line-width: 48px;
         transition: width 0.8s;
     }
 
-
-    &:hover .line {
-        width: $line-width;
-        ;
-    }
-}
-
-@keyframes move {
-    0% {
-        margin-left: 0px;
-    }
-
-    100% {
-        margin-left: 20px;
-    }
 }
 </style>
