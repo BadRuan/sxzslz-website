@@ -1,72 +1,11 @@
 <script lang="ts" setup>
-import type { EventsInter } from "@/model";
+import { onMounted } from 'vue';
+import { useArticleStore } from '@/store/article'
+const { article_data, get_article } = useArticleStore()
 
-const NewsList: EventsInter[] = [
-    {
-        title: '鸠江区2025年度农田灌溉水有效利用系数测算项目询价公告',
-        date: "2025-04-21"
-    },
-    {
-        title: '鸠江区河道管理所2025年万春圩圈堤管养维护服务及扁担河水面、莲花湖保洁养护服务采购竞争性磋商公告',
-        date: "2025-04-21"
-    },
-    {
-        title: '鸠江区2025年度农田灌溉水有效利用系数测算项目询价公告',
-        date: "2025-04-21"
-    },
-    {
-        title: '鸠江区河道管理所2025年万春圩圈堤管养维护服务及扁担河水面、莲花湖保洁养护服务采购竞争性磋商公告',
-        date: "2025-04-21"
-    },
-    {
-        title: '鸠江区2025年度农田灌溉水有效利用系数测算项目询价公告',
-        date: "2025-04-21"
-    },
-    {
-        title: '鸠江区河道管理所2025年万春圩圈堤管养维护服务及扁担河水面、莲花湖保洁养护服务采购竞争性磋商公告',
-        date: "2025-04-21"
-    },
-    {
-        title: '鸠江区河道管理所2025年万春圩圈堤管养维护服务及扁担河水面、莲花湖保洁养护服务采购竞争性磋商公告',
-        date: "2025-04-21"
-    },
-    {
-        title: '鸠江区八届人大四次会议代表议案及建议办理任务分解表（涉及区水务局）',
-        date: "2025-04-21"
-    },
-    {
-        title: '鸠江区河道管理所2025年万春圩圈堤管养维护服务及扁担河水面、莲花湖保洁养护服务采购竞争性磋商公告',
-        date: "2025-04-21"
-    },
-    {
-        title: '鸠江区水务局行政执法职责、执法依据、执法程序、监督途径',
-        date: "2025-04-21"
-    },
-    {
-        title: '鸠江区2025年度农田灌溉水有效利用系数测算项目询价公告',
-        date: "2025-04-21"
-    },
-    {
-        title: '鸠江区河道管理所2025年万春圩圈堤管养维护服务及扁担河水面、莲花湖保洁养护服务采购竞争性磋商公告',
-        date: "2025-04-21"
-    },
-    {
-        title: '鸠江区河道管理所2025年万春圩圈堤管养维护服务及扁担河水面、莲花湖保洁养护服务采购竞争性磋商公告',
-        date: "2025-04-21"
-    },
-    {
-        title: '鸠江区水务局行政执法职责、执法依据、执法程序、监督途径',
-        date: "2025-04-21"
-    },
-    {
-        title: '鸠江区2025年度农田灌溉水有效利用系数测算项目询价公告',
-        date: "2025-04-21"
-    },
-    {
-        title: '鸠江区河道管理所2025年万春圩圈堤管养维护服务及扁担河水面、莲花湖保洁养护服务采购竞争性磋商公告',
-        date: "2025-04-21"
-    },
-]
+onMounted(() => {
+    get_article()
+})
 </script>
 
 
@@ -80,10 +19,10 @@ const NewsList: EventsInter[] = [
         </div>
 
         <ul>
-            <li v-for="(item, index) in NewsList" :key="index">
+            <li v-for="(item, index) in article_data" :key="index">
                 <span>-</span>
                 <span class="news-title">{{ item.title }}</span>
-                <span class="news-date">{{ item.date }}</span>
+                <span class="news-date">{{ item.create_time.slice(0, 10) }}</span>
             </li>
         </ul>
     </div>
