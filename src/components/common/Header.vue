@@ -10,7 +10,7 @@
                     <span>网站首页</span>
                     <div></div>
                 </RouterLink>
-                <RouterLink :to="{ name: 'newslist' }">
+                <RouterLink :to="{ name: 'list' }">
                     <span>新闻发布</span>
                     <div></div>
                 </RouterLink>

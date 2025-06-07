@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Category from '@/components/news-list/Category.vue';
-import List from '@/components/news-list/List.vue';
+import Category from '@/components/newslist/Category.vue';
+import List from '@/components/newslist/List.vue';
 </script>
 
 <template>
