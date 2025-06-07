@@ -1,6 +1,6 @@
 import { $get } from "@/utils/requests";
 
 export const getSubset = async () => {
-  let data = await $get("/api/subset", "");
+  let data = await $get("/api/subset", { page: 1 });
   return data.data;
 };

@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { onMounted } from 'vue';
 import { useSubsetStore } from '@/store/subsetStore';
 const { subset_data, get_subset } = useSubsetStore();
-
-const categroys = ref(['泵站资讯', '通知公告', '专题栏目', '制度文件', '财务公示'])
 
 onMounted(() => {
     get_subset()
@@ -13,9 +11,6 @@ onMounted(() => {
 <template>
     <div class="wrap">
         <div class="title">信息分类</div>
-        <!-- <div class="item" v-for="(item, index) in categroys" :key="index">
-            {{ item }}
-        </div> -->
         <div class="item" v-for="(item, index) in subset_data" :key="index">
             {{ item.subset_name }}
         </div>
