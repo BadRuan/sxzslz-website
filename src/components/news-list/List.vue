@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { onMounted } from 'vue';
-import { useArticleStore } from '@/store/article'
+import { useArticleStore } from '@/store/articleStore'
 const { article_data, get_article } = useArticleStore()
 
 onMounted(() => {

@@ -1,6 +1,6 @@
 import { reactive } from "vue";
 import { defineStore } from "pinia";
-import { getArticle } from "@/api/article";
+import { getArticle } from "@/api/articleApi";
 import type { ArticleInter } from "@/model";
 
 export const useArticleStore = defineStore("article", () => {

@@ -12,7 +12,7 @@
 
 <style lang="scss" scoped>
 footer {
-    background-color: #454545;
+    background-color: #8d8d8d;
 
     div {
         font-size: 1em;

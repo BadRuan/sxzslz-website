@@ -1,14 +1,3 @@
-<script lang="ts" setup>
-const nav_list: string[] = [
-    "网站首页",
-    "组织管理",
-    "安全管理",
-    "工程管理",
-    "运行维护管理",
-    "信息化管理",
-]
-</script>
-
 <template>
     <header>
         <div class="heder-container">
@@ -17,10 +6,18 @@ const nav_list: string[] = [
                 <img src="@/assets/icon/logo-text.svg" alt="logo-text" />
             </div>
             <nav>
-                <a href="#" v-for="(item, index) in nav_list" :key="index">
-                    <span>{{ item }}</span>
+                <RouterLink :to="{ name: 'home' }">
+                    <span>网站首页</span>
                     <div></div>
-                </a>
+                </RouterLink>
+                <RouterLink :to="{ name: 'newslist' }">
+                    <span>新闻发布</span>
+                    <div></div>
+                </RouterLink>
+                <RouterLink :to="{ name: 'about' }">
+                    <span>关于</span>
+                    <div></div>
+                </RouterLink>
             </nav>
         </div>
     </header>

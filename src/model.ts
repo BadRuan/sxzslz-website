@@ -18,3 +18,10 @@ export interface EventsInter {
   title: string;
   date: string;
 }
+
+export interface SubsetInter {
+  subset_id: number;
+  subset_name: string;
+  subset_type: number;
+  create_time: string;
+}

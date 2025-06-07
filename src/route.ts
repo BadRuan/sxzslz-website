@@ -5,11 +5,18 @@ import ArticleList from "@/page/NewsList.vue";
 const routes = [
   {
     path: "/",
+    name: "home",
     component: Home,
   },
   {
     path: "/newslist",
+    name: "newslist",
     component: ArticleList,
+  },
+  {
+    path: "/about",
+    name: "about",
+    component: import("@/page/About.vue"),
   },
 ];
 
