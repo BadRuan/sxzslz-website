@@ -3,6 +3,7 @@ import Home from "@/page/Home.vue";
 import NotFound from "@/page/NotFound.vue";
 import NewsList from "@/page/news/list.vue";
 import NewsContent from "@/page/news/content.vue";
+import About from "@/page/About.vue";
 const routes = [
   {
     path: "/home",
@@ -28,7 +29,7 @@ const routes = [
   {
     path: "/about",
     name: "about",
-    component: import("@/page/About.vue"),
+    component: About,
   },
   {
     path: "/",
