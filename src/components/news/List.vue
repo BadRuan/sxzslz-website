@@ -1,11 +1,30 @@
 <script lang="ts" setup>
 import { onMounted } from 'vue';
-import { useArticleStore } from '@/store/articleStore'
-const { article_data, get_article } = useArticleStore()
+import { useRouter } from 'vue-router';
+import { storeToRefs } from 'pinia';
+import { useArticleStore } from '@/store/articleStore';
+
+const articleStore = useArticleStore();
+const { articles } = storeToRefs(articleStore);
+const { getArticles } = articleStore;
+
+
+
+const router = useRouter();
+
+
+const to_detail = (article_id: number) => {
+    router.push({
+        name: "content",
+        params: {
+            article_id: article_id
+        }
+    })
+};
 
 onMounted(() => {
-    get_article()
-})
+    getArticles(1)
+});
 </script>
 
 
@@ -19,10 +38,14 @@ onMounted(() => {
         </div>
 
         <ul>
-            <li v-for="(item, index) in article_data" :key="index">
+            <li v-for="(item, index) in articles" :key="index">
                 <span>-</span>
-                <span class="news-title">{{ item.title }}</span>
+                <span class="news-title" @click="to_detail(item.article_id)">
+                    {{ item.title }}
+                </span>
+
                 <span class="news-date">{{ item.create_time.slice(0, 10) }}</span>
+
             </li>
         </ul>
     </div>
@@ -77,7 +100,7 @@ $line-height: 2px;
             .news-title {
                 width: 580px;
                 font-size: 1.2em;
-
+                cursor: pointer;
             }
 
             .news-date {

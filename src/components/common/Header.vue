@@ -6,16 +6,16 @@
                 <img src="@/assets/icon/logo-text.svg" alt="logo-text" />
             </div>
             <nav>
-                <RouterLink :to="{ name: 'home' }">
+                <RouterLink :to="{ name: 'home' }" active-class="active">
                     <span>网站首页</span>
                     <div></div>
                 </RouterLink>
-                <RouterLink :to="{ name: 'list' }">
+                <RouterLink :to="{ name: 'list' }" active-class="active">
                     <span>新闻发布</span>
                     <div></div>
                 </RouterLink>
-                <RouterLink :to="{ name: 'about' }">
-                    <span>关于</span>
+                <RouterLink :to="{ name: 'about' }" active-class="active">
+                    <span>关于我们</span>
                     <div></div>
                 </RouterLink>
             </nav>
@@ -74,6 +74,14 @@ header {
                     div {
                         background-color: $primary-color;
                     }
+                }
+            }
+
+            .active {
+                color: $primary-color;
+
+                div {
+                    background-color: $primary-color;
                 }
             }
         }

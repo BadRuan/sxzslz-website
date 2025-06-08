@@ -1,17 +1,20 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
+import { storeToRefs } from 'pinia';
 import { useSubsetStore } from '@/store/subsetStore';
-const { subset_data, get_subset } = useSubsetStore();
+const subsetStore = useSubsetStore();
+const { subsets } = storeToRefs(subsetStore);
+const { getSubsets } = subsetStore;
 
 onMounted(() => {
-    get_subset()
+    getSubsets()
 })
 </script>
 
 <template>
     <div class="wrap">
         <div class="title">信息分类</div>
-        <div class="item" v-for="(item, index) in subset_data" :key="index">
+        <div class="item" v-for="item in subsets" :key="item.subset_id">
             {{ item.subset_name }}
         </div>
     </div>

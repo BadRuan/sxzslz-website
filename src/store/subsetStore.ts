@@ -1,13 +1,13 @@
 import { reactive } from "vue";
 import { defineStore } from "pinia";
-import { getSubset } from "@/api/subsetApi";
+import { get_subset } from "@/api/subsetApi";
 import type { SubsetInter } from "@/model";
 
 export const useSubsetStore = defineStore("subset", () => {
-  const subset_data = reactive<SubsetInter[]>([]);
-  const get_subset = async () => {
-    let data = await getSubset();
-    subset_data.splice(0, subset_data.length, ...data);
+  const subsets = reactive<SubsetInter[]>([]);
+  const getSubsets = async () => {
+    let data = await get_subset();
+    subsets.splice(0, subsets.length, ...data);
   };
-  return { subset_data, get_subset };
+  return { subsets, getSubsets };
 });

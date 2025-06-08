@@ -5,7 +5,7 @@ import NewsList from "@/page/news/list.vue";
 import NewsContent from "@/page/news/content.vue";
 const routes = [
   {
-    path: "/",
+    path: "/home",
     name: "home",
     component: Home,
   },
@@ -29,6 +29,10 @@ const routes = [
     path: "/about",
     name: "about",
     component: import("@/page/About.vue"),
+  },
+  {
+    path: "/",
+    redirect: "/home",
   },
   {
     path: "/:pathMatch(.*)*",
