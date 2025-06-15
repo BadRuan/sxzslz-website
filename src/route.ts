@@ -1,8 +1,8 @@
 import { createWebHistory, createRouter } from "vue-router";
 import Home from "@/page/Home.vue";
 import NotFound from "@/page/NotFound.vue";
-import NewsList from "@/page/news/list.vue";
-import NewsContent from "@/page/news/content.vue";
+import NewsList from "@/page/news/List.vue";
+import NewsContent from "@/page/news/Content.vue";
 import About from "@/page/About.vue";
 const routes = [
   {
