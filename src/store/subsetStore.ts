@@ -8,7 +8,6 @@ export const useSubsetStore = defineStore("subset", () => {
     {
       subset_id: 0,
       subset_name: "信息",
-      subset_type: 1,
       create_time: "",
     },
   ]);

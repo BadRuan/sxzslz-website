@@ -9,6 +9,8 @@ export const useArticleStore = defineStore("article", () => {
     article_id: 0,
     user_id: 0,
     subset_id: 0,
+    nick_name: "",
+    subset_name: "",
     title: "",
     content: "",
     state: true,
@@ -25,6 +27,8 @@ export const useArticleStore = defineStore("article", () => {
     article.article_id = data["article_id"];
     article.user_id = data["user_id"];
     article.subset_id = data["subset_id"];
+    article.nick_name = data["nick_name"];
+    article.subset_name = data["subset_name"];
     article.title = data["title"];
     article.content = data["content"];
     article.create_time = data["create_time"];

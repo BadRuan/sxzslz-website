@@ -2,6 +2,8 @@ export interface ArticleInter {
   article_id: number;
   user_id: number;
   subset_id: number;
+  nick_name: string;
+  subset_name: string;
   title: string;
   content: string;
   state: boolean;
@@ -22,6 +24,4 @@ export interface EventsInter {
 export interface SubsetInter {
   subset_id: number;
   subset_name: string;
-  subset_type: number;
-  create_time: string;
 }

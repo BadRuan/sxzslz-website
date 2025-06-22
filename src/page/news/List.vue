@@ -118,7 +118,7 @@ $font-size: 1.2em;
 
         .title {
             .text {
-                width: 100px;
+                width: 140px;
                 text-align: center;
                 margin-left: 40px;
                 height: $title-height - $line-height;
@@ -134,7 +134,7 @@ $font-size: 1.2em;
                 background-color: #A6A6A6;
 
                 .bottom {
-                    width: 100px;
+                    width: 140px;
                     margin-left: 40px;
                     height: $line-height;
                     background-color: $primary-color;

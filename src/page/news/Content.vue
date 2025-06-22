@@ -17,32 +17,14 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="location">当前位置：首页>泵站咨询>通知公告</div>
+    <div class="location">当前位置：首页>新闻列表>{{ article.subset_name }}</div>
     <h1>{{ article.title }}</h1>
     <div class="desc">
-        <div class="desc1">发布时间：2025-05-34 16:42</div>
-        <div class="desc2">信息来源： 沈巷镇水利站</div>
-        <div class="desc3">浏览次数：264</div>
+        <div class="desc1">发布时间：{{ article.create_time }}</div>
+        <div class="desc2">编辑： {{ article.nick_name }}</div>
+        <div class="desc3">浏览次数：{{ article.read_count }}</div>
     </div>
-    <p>{{ article.content }}{{ article.content }}{{ article.content }}{{ article.content }}{{ article.content }}{{
-        article.content }}{{ article.content }}{{ article.content }}{{ article.content }}{{ article.content }}{{
-            article.content }}{{ article.content }}{{ article.content }}{{ article.content }}{{ article.content }}{{
-            article.content }}{{ article.content }}{{ article.content }}{{ article.content }}{{ article.content }}{{
-            article.content }}{{ article.content }}{{ article.content }}{{ article.content }}{{ article.content }}{{
-            article.content }}{{ article.content }}{{ article.content }}{{ article.content }}</p>
-    <p>{{ article.content }}{{ article.content }}{{ article.content }}{{ article.content }}{{ article.content }}{{
-        article.content }}{{ article.content }}{{ article.content }}{{ article.content }}{{ article.content }}{{
-            article.content }}{{ article.content }}{{ article.content }}{{ article.content }}{{ article.content }}{{
-            article.content }}{{ article.content }}{{ article.content }}{{ article.content }}{{ article.content }}{{
-            article.content }}{{ article.content }}{{ article.content }}{{ article.content }}{{ article.content }}{{
-            article.content }}{{ article.content }}{{ article.content }}{{ article.content }}</p>
-    <p>{{ article.content }}{{ article.content }}{{ article.content }}{{ article.content }}{{ article.content }}{{
-        article.content }}{{ article.content }}{{ article.content }}{{ article.content }}{{ article.content }}{{
-            article.content }}{{ article.content }}{{ article.content }}{{ article.content }}{{ article.content }}{{
-            article.content }}{{ article.content }}{{ article.content }}{{ article.content }}{{ article.content }}{{
-            article.content }}{{ article.content }}{{ article.content }}{{ article.content }}{{ article.content }}{{
-            article.content }}{{ article.content }}{{ article.content }}{{ article.content }}</p>
-
+    <div v-html="article.content"></div>
 </template>
 
 <style lang="scss" scoped>
@@ -60,9 +42,5 @@ h1 {
     justify-content: space-between;
     padding-bottom: 4px;
     border-bottom: .5px solid #A6A6A6;
-}
-
-p {
-    line-height: 1.5em;
 }
 </style>

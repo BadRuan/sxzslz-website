@@ -4,6 +4,8 @@ import NotFound from "@/page/NotFound.vue";
 import NewsList from "@/page/news/List.vue";
 import NewsContent from "@/page/news/Content.vue";
 import About from "@/page/About.vue";
+import Edit from "@/page/Edit.vue";
+
 const routes = [
   {
     path: "/home",
@@ -24,6 +26,11 @@ const routes = [
         name: "content",
         component: NewsContent,
       },
+      {
+        path: "edit",
+        name: "edit",
+        component: Edit,
+      },
     ],
   },
   {
@@ -33,7 +40,7 @@ const routes = [
   },
   {
     path: "/",
-    redirect: "/home",
+    redirect: "/news",
   },
   {
     path: "/:pathMatch(.*)*",
