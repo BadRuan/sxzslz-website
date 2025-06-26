@@ -15,6 +15,7 @@ const { getArticles } = articleStore;
 
 const changeCurrent = (cursor: number) => {
     current.value = cursor;
+    getArticles(cursor);
 }
 
 const to_detail = (article_id: number) => {
@@ -26,10 +27,12 @@ const to_detail = (article_id: number) => {
     })
 };
 
+
 onMounted(() => {
     getSubsets();
-    getArticles(1);
+    getArticles();
 });
+
 
 </script>
 

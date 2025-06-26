@@ -1,4 +1,4 @@
-import { reactive, toRef } from "vue";
+import { reactive } from "vue";
 import { defineStore } from "pinia";
 import { get_article_list, get_article_detail } from "@/api/articleApi";
 import type { ArticleInter } from "@/model";
@@ -18,8 +18,12 @@ export const useArticleStore = defineStore("article", () => {
     read_count: 0,
   });
 
-  const getArticles = async (page: number) => {
-    let data = await get_article_list(page);
+  const getArticles = async (
+    subset: number = 1,
+    page: number = 1,
+    limit: number = 20
+  ) => {
+    let data = await get_article_list(subset, page, limit);
     articles.splice(0, articles.length, ...data);
   };
   const getArticle = async (article_id: number) => {
